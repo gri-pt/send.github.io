@@ -1,0 +1,52 @@
+
+<html>
+<head>
+  <title>Formulario</title>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+<body>
+<body background="morado.png" style="background-position: center; background-repeat: all; ">
+  <form action="" method="post">
+    <font face="verdana" color="white" size="6">Elige un numero correspondiente al dia de la semana.</font>
+    <select name="Dia" id="Dia" style="font-size: 28px" >
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+    </select>
+    <br>
+  <input type="submit" value="Enviar" class="btn btn-success" name="submit">
+
+    
+  </form>
+
+    <?php
+
+      if(isset($_POST['submit'])){
+      if(!empty($_POST['Dia'])){
+      $selected = $_POST['Dia'];
+
+        switch ($selected)
+        {
+          case 1: echo 'Lunes'; break;
+          case 2: echo 'Martes'; break;
+          case 3: echo 'Miercoles'; break;
+          case 4: echo 'Jueves'; break;
+          case 5: echo 'Viernes'; break;
+          case 6: echo 'Sabado'; break;
+          case 7: echo 'Domingo'; break;
+          
+        }
+      }else {
+       echo 'Elige el dia';
+      }
+    }
+    ?>
+  <br>
+  
